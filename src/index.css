@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* purple , black, neon : gradient from #A256F7 via #f657fc to #A256F7  color for background-gradient*/
+
+:root {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f5f5f5;
+  --section-alt: #f0f0f0;
+
+  --text-primary: #121212;
+  --text-secondary: #666666;
+
+  --card-bg: #ffffff;
+  --card-bgs: #ffffff;
+  --card-border: rgba(0, 0, 0, 0.08);
+
+  --accent: #a236e4;
+
+  --shadow-soft: 0 20px 40px rgba(0, 0, 0, 0.08);
+  --gradient-from: #c5d4ff;
+  --gradient-to: #e0e8ff;
+
+  --from: #a256f7;
+  --via: #f657fc;
+  --to: #a256f7;
+
+  --button: #a256f7;
+
+  /* LIGHT MODE GRADIENT */
+  --bg-gradient-main: linear-gradient(to top right, #ecf6f6, #f2f8fd, #f7fcfd);
+  --bg-gradient-mains: linear-gradient(to top right, #dcf4f4, #e8f4fd, #e9f8fb);
+}
+
+[data-theme="dark"] {
+  --bg-primary: #121212;
+  --bg-secondary: #000000;
+  --section-alt: #0b0b0b;
+
+  --text-primary: #ffffff;
+  --text-secondary: #aaaaaa;
+
+  --card-bg: rgba(255, 255, 255, 0.06);
+  --card-bgs: rgba(62, 47, 104, 0.771);
+  --card-border: rgba(255, 255, 255, 0.12);
+
+  --accent: #00ced1;
+
+  --shadow-soft: 0 20px 40px rgba(0, 0, 0, 0.6);
+  --gradient-from: #3a0077;
+  --gradient-to: #17002d;
+
+  --from: #63a4fa;
+  --via: #f657fc;
+  --to: #63a4fa;
+
+  --button: #a256f7;
+
+  /* DARK MODE GRADIENT */
+  --bg-gradient-main: linear-gradient(to top right, #110f35, #000002, #220141);
+  --bg-gradient-mains: linear-gradient(to top right, #100c5f, #000000, #3d0275);
+}
+
+.bgGradient {
+  background: var(--bg-gradient-main);
+  padding: 70px 0;
+}
+.color {
+  color: var(--text-primary);
+}
+.footer {
+  background-color: var(--bg-primary);
+}
+.color2 {
+  color: var(--text-secondary);
+}
+
+/* Optional reusable background */
+.bg-main {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
