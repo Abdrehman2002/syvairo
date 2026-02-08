@@ -24,7 +24,7 @@ const RETELL_API_URL = 'https://api.retellai.com/v2/create-web-call';
 
 const AGENTS = [
   {
-    id: 'agent_3117f9828329d5087d96f07d42',
+    id: 'agent_c532d66e91bb47f09a966c9c94',
     name: 'Syvairo AI Agent',
     description: 'AI automation & business solutions expert',
     color: 'cyan',
