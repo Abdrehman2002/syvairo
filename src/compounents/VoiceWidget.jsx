@@ -35,6 +35,12 @@ const AGENTS = [
     description: 'Insurance products specialist',
     color: 'blue',
   },
+  {
+    id: 'agent_e286cbcb09ada14fdac7e3e8f3',
+    name: 'Warba 2',
+    description: 'Insurance products specialist',
+    color: 'purple',
+  },
 ];
 
 // Call status types
