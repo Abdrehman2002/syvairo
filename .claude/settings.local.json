@@ -13,7 +13,14 @@
       "Bash(if exist nul del nul)",
       "Bash(git config:*)",
       "Bash(git commit:*)",
-      "Bash(git reset:*)"
+      "Bash(git reset:*)",
+      "Bash(git branch:*)",
+      "Bash(git remote add:*)",
+      "Bash(git push:*)",
+      "Bash(dir:*)",
+      "Bash(git rm:*)",
+      "Bash(git lfs install:*)",
+      "Bash(git lfs track:*)"
     ],
     "deny": [],
     "ask": []

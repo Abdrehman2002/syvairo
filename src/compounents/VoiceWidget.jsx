@@ -18,17 +18,19 @@ import {
 // ========================================
 // CONFIGURATION
 // ========================================
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001';
+// Direct Retell AI API configuration
+const RETELL_API_KEY = import.meta.env.VITE_RETELL_API_KEY;
+const RETELL_API_URL = 'https://api.retellai.com/v2/create-web-call';
 
 const AGENTS = [
   {
-    id: 'syvairo',
+    id: 'agent_3117f9828329d5087d96f07d42',
     name: 'Syvairo AI Agent',
     description: 'AI automation & business solutions expert',
     color: 'cyan',
   },
   {
-    id: 'warba',
+    id: 'agent_d22bf0489facf47a450a20ec29',
     name: 'Warba Insurance Agent',
     description: 'Insurance products specialist',
     color: 'blue',
@@ -250,16 +252,17 @@ const VoiceWidget = () => {
       // Request microphone permission first
       await requestMicrophonePermission();
 
-      console.log('📡 Requesting access token from backend...');
+      console.log('📡 Requesting access token from Retell AI...');
 
-      // Request access token from backend
-      const response = await fetch(`${API_BASE_URL}/api/create-web-call`, {
+      // Request access token directly from Retell AI API
+      const response = await fetch(RETELL_API_URL, {
         method: 'POST',
         headers: {
+          'Authorization': `Bearer ${RETELL_API_KEY}`,
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          agentId: selectedAgent.id,
+          agent_id: selectedAgent.id,
         }),
       });
 
@@ -271,7 +274,7 @@ const VoiceWidget = () => {
       const data = await response.json();
       console.log('🔑 Access token received');
       console.log('📞 Call ID:', data.call_id);
-      console.log('🤖 Agent:', data.agent_name);
+      console.log('🤖 Agent:', selectedAgent.name);
 
       // Start call with Retell SDK
       console.log('🎙️ Starting call with Retell SDK...');
