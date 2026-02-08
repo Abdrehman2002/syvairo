@@ -31,9 +31,9 @@ const FloatingAgents = () => {
         <div onClick={closeAll} className="fixed inset-0 z-40 bg-transparent" />
       )}
 
-      {/* 💬 AI CHAT WIDGET */}
+      {/* 💬 AI CHAT WIDGET - Mobile Responsive */}
       {openAiChat && (
-        <div className="fixed right-5 bottom-44 z-40">
+        <div className="fixed right-0 sm:right-5 bottom-32 sm:bottom-44 z-40 px-4 sm:px-0 w-full sm:w-auto">
           <AiChattingBox
             openAiChat={openAiChat}
             setOpenAiChat={setOpenAiChat}
@@ -41,13 +41,13 @@ const FloatingAgents = () => {
         </div>
       )}
 
-      <div className="fixed right-6 bottom-24 z-40 flex flex-col gap-4 items-center">
-        {/* 🤖 AI CHAT BUTTON */}
+      <div className="fixed right-4 sm:right-6 bottom-20 sm:bottom-24 z-40 flex flex-col gap-3 sm:gap-4 items-center">
+        {/* 🤖 AI CHAT BUTTON - Mobile Responsive */}
         <motion.button
           onClick={toggleAiChat}
           whileHover={{ scale: 1.1, boxShadow: "0 0 40px rgba(6,182,212,0.7)" }}
           whileTap={{ scale: 0.95 }}
-          className="w-16 h-16 rounded-full bg-gradient-to-br from-cyan-500 to-cyan-600
+          className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-gradient-to-br from-cyan-500 to-cyan-600
                      border-2 border-cyan-400 text-white flex items-center justify-center"
           style={{ boxShadow: "0 0 30px rgba(6,182,212,0.5)" }}
           animate={{
@@ -63,15 +63,15 @@ const FloatingAgents = () => {
             ease: "easeInOut",
           }}
         >
-          <BsChatDots className="text-3xl" />
+          <BsChatDots className="text-2xl sm:text-3xl" />
         </motion.button>
 
-        {/* 🟢 WHATSAPP BUTTON */}
+        {/* 🟢 WHATSAPP BUTTON - Mobile Responsive */}
         <motion.button
           onClick={openWhatsapp}
           whileHover={{ scale: 1.1, boxShadow: "0 0 40px rgba(34,197,94,0.8)" }}
           whileTap={{ scale: 0.95 }}
-          className="w-16 h-16 rounded-full bg-green-500 text-white
+          className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-green-500 text-white
                      flex items-center justify-center border-2 border-green-400"
           style={{ boxShadow: "0 0 30px rgba(34,197,94,0.6)" }}
           animate={{
@@ -87,7 +87,7 @@ const FloatingAgents = () => {
             ease: "easeInOut",
           }}
         >
-          <FaWhatsapp className="text-3xl" />
+          <FaWhatsapp className="text-2xl sm:text-3xl" />
         </motion.button>
       </div>
     </>
