@@ -362,7 +362,7 @@ const VoiceWidget = () => {
           ======================================== */}
       <motion.button
         onClick={() => setIsOpen(true)}
-        className="fixed bottom-6 right-6 z-50 w-16 h-16 rounded-full bg-gradient-to-br from-cyan-500 to-cyan-600 text-white shadow-[0_0_30px_rgba(6,182,212,0.5)] flex items-center justify-center cursor-pointer border-2 border-cyan-400"
+        className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-gradient-to-br from-cyan-500 to-cyan-600 text-white shadow-[0_0_30px_rgba(6,182,212,0.5)] flex items-center justify-center cursor-pointer border-2 border-cyan-400"
         whileHover={{
           scale: 1.1,
           boxShadow: '0 0 40px rgba(6,182,212,0.7)',
@@ -382,7 +382,7 @@ const VoiceWidget = () => {
         }}
         aria-label="Open Voice AI Widget"
       >
-        <HiMicrophone size={28} />
+        <HiMicrophone className="w-6 h-6 sm:w-7 sm:h-7" />
       </motion.button>
 
       {/* ========================================
@@ -400,9 +400,9 @@ const VoiceWidget = () => {
               onClick={() => !isCallActive && setIsOpen(false)}
             />
 
-            {/* Modal */}
+            {/* Modal - Mobile Responsive */}
             <motion.div
-              className="fixed bottom-6 right-6 z-50 w-full max-w-md"
+              className="fixed bottom-0 right-0 sm:bottom-6 sm:right-6 z-50 w-full sm:w-auto sm:max-w-md px-4 sm:px-0"
               initial={{ opacity: 0, y: 100, scale: 0.9 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 100, scale: 0.9 }}
@@ -415,12 +415,12 @@ const VoiceWidget = () => {
                     'linear-gradient(135deg, rgba(15,23,42,0.98), rgba(30,41,59,0.98))',
                 }}
               >
-                {/* Header */}
-                <div className="px-6 py-4 border-b border-cyan-400/20 flex items-center justify-between">
-                  <div className="flex items-center gap-3">
+                {/* Header - Mobile Responsive */}
+                <div className="px-4 sm:px-6 py-3 sm:py-4 border-b border-cyan-400/20 flex items-center justify-between">
+                  <div className="flex items-center gap-2 sm:gap-3">
                     <div className={`w-3 h-3 rounded-full ${getStatusColor()}`} />
                     <div>
-                      <h3 className="text-white font-semibold text-lg">
+                      <h3 className="text-white font-semibold text-base sm:text-lg">
                         Voice AI Assistant
                       </h3>
                       <p className="text-gray-400 text-xs">{getStatusText()}</p>
@@ -439,8 +439,8 @@ const VoiceWidget = () => {
                   </button>
                 </div>
 
-                {/* Content */}
-                <div className="p-6 space-y-4">
+                {/* Content - Mobile Responsive */}
+                <div className="p-4 sm:p-6 space-y-4">
                   {/* Agent Selection Dropdown */}
                   {!isCallActive && (
                     <div className="relative">
@@ -550,36 +550,7 @@ const VoiceWidget = () => {
                     </div>
                   )}
 
-                  {/* Transcript Display */}
-                  {isCallActive && (
-                    <div className="bg-slate-800/50 rounded-xl border border-cyan-400/20 p-4 h-64 overflow-y-auto">
-                      <div className="text-gray-300 text-sm space-y-3">
-                        {transcript.length === 0 ? (
-                          <p className="text-gray-500 italic text-center py-8">
-                            Waiting for conversation to begin...
-                          </p>
-                        ) : (
-                          transcript.map((entry, index) => (
-                            <div key={index} className="space-y-1">
-                              <div className="flex items-start gap-2">
-                                <span
-                                  className={`text-xs font-semibold ${
-                                    entry.role === 'agent'
-                                      ? 'text-cyan-400'
-                                      : 'text-blue-400'
-                                  }`}
-                                >
-                                  {entry.role === 'agent' ? '🤖 AI' : '👤 You'}:
-                                </span>
-                                <span className="flex-1">{entry.content}</span>
-                              </div>
-                            </div>
-                          ))
-                        )}
-                        <div ref={transcriptEndRef} />
-                      </div>
-                    </div>
-                  )}
+                  {/* Transcript removed - audio only */}
 
                   {/* Error Display */}
                   {error && (
@@ -618,7 +589,7 @@ const VoiceWidget = () => {
                       <>
                         <motion.button
                           onClick={handleStartCall}
-                          className="w-full py-4 rounded-2xl bg-gradient-to-r from-cyan-500 to-cyan-600 text-white font-semibold text-lg flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(6,182,212,0.4)]"
+                          className="w-full py-3 sm:py-4 rounded-2xl bg-gradient-to-r from-cyan-500 to-cyan-600 text-white font-semibold text-base sm:text-lg flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(6,182,212,0.4)]"
                           whileHover={{
                             scale: 1.02,
                             boxShadow: '0 0 30px rgba(6,182,212,0.6)',
@@ -640,7 +611,7 @@ const VoiceWidget = () => {
                     {isCallActive && (
                       <motion.button
                         onClick={handleEndCall}
-                        className="w-full py-4 rounded-2xl bg-gradient-to-r from-red-500 to-red-600 text-white font-semibold text-lg flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(239,68,68,0.4)]"
+                        className="w-full py-3 sm:py-4 rounded-2xl bg-gradient-to-r from-red-500 to-red-600 text-white font-semibold text-base sm:text-lg flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(239,68,68,0.4)]"
                         whileHover={{
                           scale: 1.02,
                           boxShadow: '0 0 30px rgba(239,68,68,0.6)',
