@@ -46,7 +46,7 @@ const AiChattingBox = ({ setOpenAiChat }) => {
     setLoading(true);
 
     try {
-      const response = await fetch("https://syvairorpa.app.n8n.cloud/webhook/6441d0d7-41aa-4b8d-b1b5-b1159781a1d9", {
+      const response = await fetch("https://syvairorpa.app.n8n.cloud/webhook-test/6441d0d7-41aa-4b8d-b1b5-b1159781a1d9", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
