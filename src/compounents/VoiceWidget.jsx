@@ -30,13 +30,13 @@ const AGENTS = [
     color: 'cyan',
   },
   {
-    id: 'agent_d22bf0489facf47a450a20ec29',
+    id: 'agent_d757df12b05ea8531725293a31',
     name: 'Warba Insurance Agent',
     description: 'Insurance products specialist',
     color: 'blue',
   },
   {
-    id: 'agent_e286cbcb09ada14fdac7e3e8f3',
+    id: 'agent_125456f9352c573d40bfd3728c',
     name: 'Warba 2',
     description: 'Insurance products specialist',
     color: 'purple',
